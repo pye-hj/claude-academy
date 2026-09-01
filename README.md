@@ -19,6 +19,7 @@
 - `/teach`
 - `/quiz`
 - `/score-quiz`
+- `/share-course`
 
 ### generate-syllabus
 
@@ -47,6 +48,15 @@ n回目の講座内容の理解度をチェックする問を出題します。
 
 quizのテストへの解答を採点します。
 
+### share-course
+
+シラバスと全講座を1枚のページにまとめ、Claudeのアーティファクトとして公開します。組織で教材を共有するための出口です。
+
+- 共有相手に渡すのは1本のURLだけです。目次・進捗表示・前後の講座への導線が付き、講座内の理解度チェックもそのまま動きます。
+- 講座ごとにShadow DOMの区画へ収めるため、講座間でCSSやIDが干渉しません。元の成果物は書き換えません。
+- ローカル専用の`test.html`・`score.html`・`kaitou.json`・`memo.md`は同梱しません。
+- 講座を追加した後にもう一度実行すれば、同じURLが更新されます（`artifacts/<テーマ名>/published.json`にURLを記録）。
+
 ```mermaid
 flowchart TD
 %% ノードの定義
@@ -54,6 +64,7 @@ GS["skill:generate-syllabus<br/>（シラバス生成）"]
 TL["skill:teach<br/>（第n回講座の解説）"]
 QZ["skill:quiz<br/>（理解度チェック出題）"]
 SQ["skill:score-quiz<br/>（テストの採点）"]
+SC["skill:share-course<br/>（1枚にまとめて公開）"]
 
     %% 各ステップの補足情報（サブノート）
     noteTL["AIと質疑応答して理解を深める"]
@@ -65,11 +76,12 @@ SQ["skill:score-quiz<br/>（テストの採点）"]
     SQ == "理解できたら第n+1回へ" ==> GS
     TL == "n回目の学習内容から出題" ==> QZ
     QZ == "テストの解答を送信" ==> SQ
+    TL == "講座が出揃ったら組織へ共有" ==> SC
 
     %% スタイリング
     classDef main fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000,font-weight:bold
     classDef note fill:#fff8e1,stroke:#ffc107,stroke-width:1px,color:#333,stroke-dasharray: 5 5
 
-    class GS,TL,QZ,SQ main
+    class GS,TL,QZ,SQ,SC main
     class noteGS,noteTL,noteQZ note
 ```

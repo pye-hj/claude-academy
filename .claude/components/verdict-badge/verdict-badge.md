@@ -1,6 +1,6 @@
 # verdict-badge コンポーネント
 
-`score.html`（`scoring-quiz`スキル）で、正解系の採点評価（GOOD / GREAT / EXCELLENT）をリッチなバッジとして表示するための標準コンポーネントです。
+`score.html`（`score-quiz`スキル）で、正解系の採点評価（GOOD / GREAT / EXCELLENT）をリッチなバッジとして表示するための標準コンポーネントです。
 
 **使い方**：`score.html`を組み立てる前にこのファイルを`Read`で読み込み、下記のCSSブロックとHTMLスニペットを**改変せずそのまま**使用してください。独自に代替のバッジスタイルを新規作成しないでください。
 

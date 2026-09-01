@@ -15,12 +15,12 @@
 
 下記のスキルがあります。
 
-- `/generating-syllabus`
-- `/teaching-n-th-lecture`
-- `/quizing`
-- `/scoring-quiz`
+- `/generate-syllabus`
+- `/teach`
+- `/quiz`
+- `/score-quiz`
 
-### generating-syllabus
+### generate-syllabus
 
 体系的な学習のためのカリキュラムをシラバスとして出力します。
 
@@ -28,32 +28,32 @@
 - 5~10回の講座に分割して体系的に学べる構成が作成されます。
 - 3段階のレベル(beginner, standard, advanced)で講座が展開されるので、advancedはいったんスキップする、beginnerだけ学習して実務のとっかかりにする、などの使い方を想定しています。
 
-### teaching-n-th-lecture
+### teach
 
 出力されたシラバスに沿って、n回目の講座の解説を受けられます。
 
 - この解説のhtmlをAIと共有して質疑応答をして理解を深めます。
 
-### quizing
+### quiz
 
 n回目の講座内容の理解度をチェックする問を出題します。
 
 - インタラクティブなhtmlで解答することができます。
-- テストはローカルサーバー（`skills/quizing/serve-test.py`）経由で`http://127.0.0.1:<ポート>/test.html`として開かれます。「回答を保存」を押すと`kaitou.json`が講座フォルダへ直接書き出されるため、ダウンロードフォルダからの移動は不要です。
-  - サーバーは1時間無操作で自動終了します。`scoring-quiz`実行時にも停止されます。
+- テストはローカルサーバー（`skills/quiz/serve-test.py`）経由で`http://127.0.0.1:<ポート>/test.html`として開かれます。「回答を保存」を押すと`kaitou.json`が講座フォルダへ直接書き出されるため、ダウンロードフォルダからの移動は不要です。
+  - サーバーは1時間無操作で自動終了します。`score-quiz`実行時にも停止されます。
   - `test.html`を`file://`で直接開いた場合は、従来どおりダウンロードフォルダに保存されます（この場合のみ手動で講座フォルダへ移動が必要）。
 
-### scoring-quiz
+### score-quiz
 
-quizingのテストへの解答を採点します。
+quizのテストへの解答を採点します。
 
 ```mermaid
 flowchart TD
 %% ノードの定義
-GS["skill:generating-syllabus<br/>（シラバス生成）"]
-TL["skill:teaching-n-th-lecture<br/>（第n回講座の解説）"]
-QZ["skill:quizing<br/>（理解度チェック出題）"]
-SQ["skill:scoring-quiz<br/>（テストの採点）"]
+GS["skill:generate-syllabus<br/>（シラバス生成）"]
+TL["skill:teach<br/>（第n回講座の解説）"]
+QZ["skill:quiz<br/>（理解度チェック出題）"]
+SQ["skill:score-quiz<br/>（テストの採点）"]
 
     %% 各ステップの補足情報（サブノート）
     noteTL["AIと質疑応答して理解を深める"]

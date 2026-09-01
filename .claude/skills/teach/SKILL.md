@@ -1,5 +1,5 @@
 ---
-name: teaching-n-th-lecture
+name: teach
 description: シラバス記載の講座をユーザーに展開します。
 disable-mode-invocation: true
 model: opus
@@ -9,7 +9,7 @@ model: opus
 
 1. 学習コンテンツの確認
 
-- `claude-academy/artifacts/`配下に当該ディレクトリ（`<テーマ名>`）が存在しない場合、`/generating-syllabus`の使用を促し処理を終了する
+- `claude-academy/artifacts/`配下に当該ディレクトリ（`<テーマ名>`）が存在しない場合、`/generate-syllabus`の使用を促し処理を終了する
 - `claude-academy/artifacts/<テーマ名>`を見つけた場合、`AskUserQuestion`で学習コンテンツを選択させ、当該ディレクトリ配下の`syllabus.html`を読み込み2.の手順に進む
 
 2. 開講する講座の確認

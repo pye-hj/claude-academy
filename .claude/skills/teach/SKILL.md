@@ -20,7 +20,9 @@ model: opus
 
 確定した内容をレクチャーするhtmlを生成し、`artifacts/<テーマ名>/lecture-<n>/lecture.html`として出力します。
 
-- syllabus.htmlの講座番号のコンポーネントに生成した`lecture.html`へのリンクを追加する
+- `lecture.html`を組み立てる前に、`.claude/components/course-structure/course-structure.md`を`Read`で参照し、記載された構造規約に従います。配色・レイアウト・図解の見せ方は規約の対象外なので自由に決めて構いません。
+- `syllabus.html`の`id="lecture-<n>"`の要素内にあるリンクを、生成した`lecture.html`へのリンクとして追加・有効化する
+  - `id="lecture-<n>"`が無い既存のシラバスの場合は、該当する回のブロックを特定して`id`を付与してからリンクを扱う
 
 4. 講座ファイルの表示
 

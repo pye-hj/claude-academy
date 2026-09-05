@@ -36,6 +36,7 @@ model: opus
 
 プロットをベースにシラバスを作成します。
 
+- `syllabus.html`を組み立てる前に、`.claude/components/course-structure/course-structure.md`を`Read`で参照し、記載された構造規約に従います。配色・レイアウト・カード設計は規約の対象外なので自由に決めて構いません。
 - `artifacts/`配下に`<テーマ名>`ディレクトリを作成する
 - `artifacts/<テーマ名>/`配下に`syllabus.html`としてシラバスを出力する
 

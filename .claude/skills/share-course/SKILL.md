@@ -26,7 +26,7 @@ model: sonnet
 ### 2. バンドルの生成
 
 ```sh
-python3 ~/claude-academy/.claude/skills/share-course/bundle.py ~/claude-academy/artifacts/<テーマ名>
+python3 .claude/skills/share-course/bundle.py artifacts/<テーマ名>
 ```
 
 `artifacts/<テーマ名>/share.html`が出力されます。標準出力に区画一覧と注意事項が出るので、次を確認します。
@@ -41,7 +41,7 @@ python3 ~/claude-academy/.claude/skills/share-course/bundle.py ~/claude-academy/
 
 `Artifact`ツールで`share.html`を公開します。
 
-- `file_path`: `~/claude-academy/artifacts/<テーマ名>/share.html`
+- `file_path`: `artifacts/<テーマ名>/share.html`
 - `title`: 指定不要（`share.html`の`<title>`にコース名が入っています）
 - `description`: そのコースが何を学べるものかを1文で
 - `favicon`: コースの主題に合う絵文字を1つ（例：Docker→🐳、GitHub→🐙）。**2回目以降は渡さない**（アイコンが変わると別ページに見えるため）

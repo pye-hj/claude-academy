@@ -10,14 +10,14 @@ model: sonnet
 気さくな口調で`AskUserQuestion`で学習コンテンツを確認します。
 
 - 直前に`quiz`スキルの使用履歴があれば対象を推測してユーザーに確認します。
-- 使用履歴がなければ`claude-academy/artifacts/`配下の`<テーマ名>`, `<出題範囲>`を順に確認し、採点対象の`test.html`と`kaitou.json`を確定します。
+- 使用履歴がなければ`artifacts/`配下の`<テーマ名>`, `<出題範囲>`を順に確認し、採点対象の`test.html`と`kaitou.json`を確定します。
   - 通常`kaitou.json`は`quiz`のローカルサーバーが講座フォルダへ直接書き出している。
   - `test.html`を`file://`で直接開いた場合はダウンロードフォルダに落ちるフォールバックが働く。講座フォルダに`kaitou.json`が無ければユーザーにその旨を伝え、ダウンロードフォルダから移動してもらう（`kaitou (1).json`など付番がある場合は最も新しいものを採点対象とする）。
 
 対象を確定したら、残っている`quiz`のテスト配信サーバーを停止します。
 
 ```sh
-python3 ~/claude-academy/.claude/skills/quiz/serve-test.py ~/claude-academy/artifacts/<テーマ名>/<出題範囲> --stop
+python3 .claude/skills/quiz/serve-test.py artifacts/<テーマ名>/<出題範囲> --stop
 ```
 
 - 起動中のサーバーが無ければ何もせず終了するので、常に実行して構いません（`pkill -f`はシェル自身にもマッチして誤爆するため使わないこと）。

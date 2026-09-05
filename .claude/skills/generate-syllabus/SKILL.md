@@ -36,13 +36,13 @@ model: opus
 
 プロットをベースにシラバスを作成します。
 
-- `claude-academy/artifacts/`配下に`<テーマ名>`ディレクトリを作成する
-- `claude-academy/artifacts/<テーマ名>/`配下に`syllabus.html`としてシラバスを出力する
+- `artifacts/`配下に`<テーマ名>`ディレクトリを作成する
+- `artifacts/<テーマ名>/`配下に`syllabus.html`としてシラバスを出力する
 
 4. シラバスの表示
 
 成果物をユーザー既定ブラウザで表示します。
 
 ```sh
-open ~/claude-academy/artifacts/<テーマ名>/syllabus.html
+open artifacts/<テーマ名>/syllabus.html
 ```

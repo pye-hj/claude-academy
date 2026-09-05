@@ -1,7 +1,8 @@
 ---
 name: share-course
 description: コースの成果物を1枚にまとめ、Claudeのアーティファクトとして組織に共有できる形で公開します。
-disable-mode-invocation: true
+disable-model-invocation: true
+model: sonnet
 ---
 
 ## 何をするスキルか

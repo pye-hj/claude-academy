@@ -1,7 +1,7 @@
 ---
 name: quiz-generator
 description: シラバス記載の講座の理解度を確認するテスト問題を生成します。
-model: sonnet
+model: opus
 ---
 
 メインエージェントから受け取る情報：`<テーマ名>`、`<出題範囲>`

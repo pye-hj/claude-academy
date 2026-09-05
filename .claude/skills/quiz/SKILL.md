@@ -1,7 +1,8 @@
 ---
 name: quiz
 description: シラバス記載の講座のテストをユーザーに展開します。
-disable-mode-invocation: true
+disable-model-invocation: true
+model: haiku
 ---
 
 1. 学習コンテンツの確認

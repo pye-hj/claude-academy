@@ -1,7 +1,7 @@
 ---
 name: quiz-scorer-hard
 description: メインエージェントから渡る`test.html`と`kaitou.json`、問題番号をもとに採点を行い、採点結果を返却します。自由記述の問題の採点を担当します。
-model: sonnet
+model: opus
 ---
 
 1. 採点対象の確認

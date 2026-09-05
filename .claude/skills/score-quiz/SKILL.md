@@ -1,7 +1,8 @@
 ---
 name: score-quiz
 description: ユーザーが受講した講座のテストの採点を行い、結果を出力します。
-disable-mode-invocation: true
+disable-model-invocation: true
+model: sonnet
 ---
 
 1. 採点対象の確認

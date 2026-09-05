@@ -1,7 +1,7 @@
 ---
 name: teach
 description: シラバス記載の講座をユーザーに展開します。
-disable-mode-invocation: true
+disable-model-invocation: true
 model: opus
 ---
 

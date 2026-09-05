@@ -1,8 +1,8 @@
 ---
 name: generate-syllabus
 description: 特定の技術トピックについての体系的な学習のシラバスを構成・出力します。
-disable-mode-invocation: true
-model: sonnet
+disable-model-invocation: true
+model: opus
 ---
 
 ## 手順

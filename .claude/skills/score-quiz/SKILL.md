@@ -32,7 +32,7 @@ python3 .claude/skills/quiz/serve-test.py artifacts/<テーマ名>/<出題範囲
 
 3. 採点結果の出力
 
-サブエージェントから返却された採点結果を集約し、`claude-academy/artifacts/<テーマ名>/<出題範囲>/score.html`として出力します。
+サブエージェントから返却された採点結果を集約し、`artifacts/<テーマ名>/<出題範囲>/score.html`として出力します。
 
 - `score.html`を組み立てる前に、`.claude/components/verdict-badge/verdict-badge.md`を`Read`で参照し、記載されたCSSブロックとHTMLスニペットを改変せずそのまま使用します。サブエージェントから`verdict`（`excellent`/`great`/`good`）が返された設問は、対応するバッジを`q-header`内の`.q-score-pill`と並べて表示します。`verdict`が返されなかった設問（不正解・低得点）にはバッジを表示せず、従来通りpillと解説文のみで表示します。独自の代替バッジスタイルを新規作成しないこと。
 - `score.html`の冒頭では全体の結果に対する総評と今後の学習のアドバイスを表示する。
@@ -45,5 +45,5 @@ python3 .claude/skills/quiz/serve-test.py artifacts/<テーマ名>/<出題範囲
 生成された`score.html`をユーザー既定ブラウザで表示します。
 
 ```sh
-open ~/claude-academy/artifacts/<テーマ名>/<出題範囲>/score.html
+open artifacts/<テーマ名>/<出題範囲>/<出力ファイル>
 ```

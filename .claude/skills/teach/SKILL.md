@@ -21,6 +21,7 @@ model: opus
 確定した内容をレクチャーするhtmlを生成し、`artifacts/<テーマ名>/lecture-<n>/lecture.html`として出力します。
 
 - `lecture.html`を組み立てる前に、`.claude/components/course-structure/course-structure.md`を`Read`で参照し、記載された構造規約に従います。配色・レイアウト・図解の見せ方は規約の対象外なので自由に決めて構いません。
+- 理解度チェックに選択式（4択）を含める場合は、選択肢を書き始める前に`.claude/components/answer-placement/answer-placement.md`を`Read`で参照し、記載の手順で正答位置を確定してから作問します。正誤をJSハンドラで持つ実装では、`true`を渡す選択肢が確定した位置と一致していることを確認してください。
 - `syllabus.html`の`id="lecture-<n>"`の要素内にあるリンクを、生成した`lecture.html`へのリンクとして追加・有効化する
   - `id="lecture-<n>"`が無い既存のシラバスの場合は、該当する回のブロックを特定して`id`を付与してからリンクを扱う
 
